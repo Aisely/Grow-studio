@@ -49,13 +49,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                   }
                   placeholder="Your Email"
                 />
-                {/* <input
-                value={form.email}
-                onChange={(event) =>
-                  setForm({ ...form, email: event.target.value })
-                }
-                placeholder="Your Email"
-                /> */}
+               
             </FormControl>
             <FormControl isRequired>
               <FormLabel>First name</FormLabel>
