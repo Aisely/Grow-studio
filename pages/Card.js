@@ -53,21 +53,26 @@ export default function Card({ learnerId, form }) {
               <Text fontSize={'md'} fontWeight={600} >Name:</Text>
               <ListItem>
                 {/* <ListIcon as={CheckIcon} color="green.400" /> */}
-                {`${form.firstname} ${form.lastname}`}
+                {
+                  form.firstname ?
+                `${form.firstname} ${form.lastname}`
+                  :
+                null
+              }
               </ListItem>
             </div>
             <div>
               <Text fontSize={'md'} fontWeight={600} >Program:</Text>
               <ListItem>
                 {/* <ListIcon as={CheckIcon} color="green.400" /> */}
-                {form.program}
+                {form.program ? form.program : null}
               </ListItem>
             </div>
             <div>
               <Text fontSize={'md'} fontWeight={600} >Level:</Text>
               <ListItem>
                 {/* <ListIcon as={CheckIcon} color="green.400" /> */}
-                {form.level}
+                {form.level ? form.level : null}
               </ListItem>
             </div>
           </List>
