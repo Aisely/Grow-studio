@@ -40,7 +40,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
           shadow="base"
         >
           <VStack spacing={5}>
-            <FormControl isRequired>
+            {/* <FormControl isRequired>
               <FormLabel>Email</FormLabel>
                 <Input
                   value={form.email}
@@ -50,7 +50,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                   placeholder="Your Email"
                 />
                
-            </FormControl>
+            </FormControl> */}
             <FormControl isRequired>
               <FormLabel>First name</FormLabel>
                 <Input
