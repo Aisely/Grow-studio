@@ -26,7 +26,6 @@ import { FaRegImages } from "react-icons/fa";
 
 
 const Form = ({ setForm, form, onGenerateId }) => {
-  // const { hasCopied, onCopy } = useClipboard("example@example.com");
 
   return (
     <>

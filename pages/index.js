@@ -64,7 +64,7 @@ export default function Home() {
           <Form setForm={setForm} form={form} onGenerateId={onGenerateId} />
         </div>
         <div className="card">
-          <Card form={form} learnerId={learnerId} />
+          {/*<Card form={form} learnerId={learnerId} /> */}
         </div>
       </div>
     </>
