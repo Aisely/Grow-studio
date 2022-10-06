@@ -32,6 +32,8 @@ const Form = ({ setForm, form, onGenerateId }) => {
     <>
       <Stack>
         <Box
+          w={`400px`}
+          minW={'330px'}
           bg={useColorModeValue("white", "gray.700")}
           borderRadius="lg"
           p={8}
@@ -127,7 +129,6 @@ const Form = ({ setForm, form, onGenerateId }) => {
               _hover={{
                 bg: "blue.500",
               }}
-              isFullWidth
               type="submit"
               onClick={onGenerateId}
             >
