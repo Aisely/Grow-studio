@@ -68,6 +68,7 @@ export default function Home() {
   };
   return (
     <>
+    <div className="header"></div>
       <div className="wrap">
         <div className="form">
           <Form setForm={setForm} form={form} onGenerateId={onGenerateId} />

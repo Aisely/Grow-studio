@@ -42,7 +42,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
             <FormControl isRequired>
               <FormLabel>Email</FormLabel>
               <InputGroup>
-                <InputLeftElement children={<BsPerson />} />
+                {/* <InputLeftElement children={<BsPerson />} /> */}
                 <Input
                   type="email"
                   name="email"
@@ -57,7 +57,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
             <FormControl isRequired>
               <FormLabel>First name</FormLabel>
               <InputGroup>
-                <InputLeftElement children={<BsPerson />} />
+                {/* <InputLeftElement children={<BsPerson />} /> */}
                 <Input
                   type="text"
                   name="name"
@@ -72,7 +72,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
             <FormControl isRequired>
               <FormLabel>Last name</FormLabel>
               <InputGroup>
-                <InputLeftElement children={<MdOutlineEmail />} />
+                {/* <InputLeftElement children={<MdOutlineEmail />} /> */}
                 <Input
                   type="text"
                   name="lastname"
@@ -131,7 +131,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
               type="submit"
               onClick={onGenerateId}
             >
-              Generate Learner's ID
+              Generate Learner&apos;s ID
             </Button>
           </VStack>
         </Box>
