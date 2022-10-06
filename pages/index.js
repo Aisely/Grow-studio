@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Form from "./Form";
-import Card from "./Card";
+// import Card from "./Card";
 
 export default function Home() {
   const [learnerId, setLearnerId] = useState('')
@@ -63,9 +63,9 @@ export default function Home() {
         <div className="form">
           <Form setForm={setForm} form={form} onGenerateId={onGenerateId} />
         </div>
-        <div className="card">
+        {/* <div className="card">
           <Card form={form} learnerId={learnerId} />
-        </div>
+        </div> */}
       </div>
     </>
   );
