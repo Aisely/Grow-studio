@@ -39,10 +39,10 @@ const Form = ({ setForm, form, onGenerateId }) => {
           shadow="base"
         >
           <VStack spacing={5}>
-            {/* <FormControl isRequired>
+            <FormControl isRequired>
               <FormLabel>Email</FormLabel>
               <InputGroup>
-                <Input
+                {/* <Input
                   type="email"
                   name="email"
                   value={form.email}
@@ -50,6 +50,15 @@ const Form = ({ setForm, form, onGenerateId }) => {
                     setForm({ ...form, email: event.target.value })
                   }
                   placeholder="Your Email"
+                /> */}
+                <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={(event) =>
+                  setForm({ ...form, email: event.target.value })
+                }
+                placeholder="Your Email"
                 />
               </InputGroup>
             </FormControl>
@@ -66,7 +75,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                   placeholder="Your first name"
                 />
               </InputGroup>
-            </FormControl> */}
+            </FormControl>
             <FormControl isRequired>
               <FormLabel>Last name</FormLabel>
               <InputGroup>
