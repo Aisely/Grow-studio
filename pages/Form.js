@@ -39,10 +39,9 @@ const Form = ({ setForm, form, onGenerateId }) => {
           shadow="base"
         >
           <VStack spacing={5}>
-            <FormControl isRequired>
+            {/* <FormControl isRequired>
               <FormLabel>Email</FormLabel>
               <InputGroup>
-                {/* <InputLeftElement children={<BsPerson />} /> */}
                 <Input
                   type="email"
                   name="email"
@@ -57,7 +56,6 @@ const Form = ({ setForm, form, onGenerateId }) => {
             <FormControl isRequired>
               <FormLabel>First name</FormLabel>
               <InputGroup>
-                {/* <InputLeftElement children={<BsPerson />} /> */}
                 <Input
                   type="text"
                   name="name"
@@ -68,7 +66,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                   placeholder="Your first name"
                 />
               </InputGroup>
-            </FormControl>
+            </FormControl> */}
             <FormControl isRequired>
               <FormLabel>Last name</FormLabel>
               <InputGroup>
