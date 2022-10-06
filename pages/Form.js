@@ -30,12 +30,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
 
   return (
     <>
-      <Stack
-      >
-        <Stack
-        >
-         
-        </Stack>
+      <Stack>
         <Box
           bg={useColorModeValue("white", "gray.700")}
           borderRadius="lg"
