@@ -62,7 +62,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                 />
               </InputGroup>
             </FormControl>
-            <FormControl isRequired>
+            {/* <FormControl isRequired>
               <FormLabel>First name</FormLabel>
               <InputGroup>
                 <Input
@@ -75,14 +75,19 @@ const Form = ({ setForm, form, onGenerateId }) => {
                   placeholder="Your first name"
                 />
               </InputGroup>
-            </FormControl>
+            </FormControl> */}
+            <input
+                type="text"
+                name="firstname"
+                value={form.firstname}
+                onChange={(event) =>
+                  setForm({ ...form, firstname: event.target.value })
+                }/>
             <FormControl isRequired>
               <FormLabel>Last name</FormLabel>
               <InputGroup>
                 {/* <InputLeftElement children={<MdOutlineEmail />} /> */}
                 <Input
-                  type="text"
-                  name="lastname"
                   placeholder="Your last name"
                   value={form.lastname}
                   onChange={(event) =>
