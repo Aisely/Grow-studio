@@ -9,6 +9,7 @@ import Card from "./Card";
 export default function Home() {
   const [learnerId, setLearnerId] = useState('')
   const [form, setForm] = useState({
+    email: "",
     firstname: "",
     lastname: "",
     program: "",
@@ -23,34 +24,34 @@ export default function Home() {
     // const hash = hasha(form.firstname)
     let pr;
     switch (form.program) {
-      case "android":
+      case "Android Development":
         pr = "AND";
         break;
-      case "frontend":
+      case "Frontend Development":
         pr = "FRD";
         break;
-      case "backend":
+      case "Backend Development":
         pr = "BKD";
         break;
-      case "fullstack":
+      case "Full-stack development":
         pr = "FUD";
         break;
-      case "devops":
+      case "DevOps Development":
         pr = "DOP";
         break;
     }
     let le;
     switch (form.level) {
-      case "entry":
+      case "Entry":
         le = "EN";
         break;
-      case "junior":
+      case "Junior":
         le = "JU";
         break;
-      case "intermediate":
+      case "Intermediate":
         le = "IN";
         break;
-      case "senior":
+      case "Senior":
         le = "SE";
         break;
     }

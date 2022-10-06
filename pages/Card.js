@@ -8,6 +8,7 @@ import {
   ListIcon,
   Button,
   useColorModeValue,
+  Tooltip,
 } from '@chakra-ui/react';
 // import { CheckIcon } from '@chakra-ui/icons';
 
@@ -43,6 +44,7 @@ export default function Card({ learnerId, form }) {
               {learnerId}
             </Text>
           </Stack>
+        
         </Stack>
 
         <Box bg={useColorModeValue('gray.50', 'gray.900')} px={6} py={10}>
