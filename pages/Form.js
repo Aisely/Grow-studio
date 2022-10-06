@@ -51,7 +51,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                 />
                
             </FormControl> */}
-            <FormControl isRequired>
+            {/* <FormControl isRequired>
               <FormLabel>First name</FormLabel>
                 <Input
                 type="name"
@@ -61,14 +61,14 @@ const Form = ({ setForm, form, onGenerateId }) => {
                   }
                   placeholder="Your first name"
                 />
-            </FormControl>
-            {/* <input
+            </FormControl> */}
+            <input
                 type="text"
                 name="firstname"
                 value={form.firstname}
                 onChange={(event) =>
                   setForm({ ...form, firstname: event.target.value })
-                }/> */}
+                }/>
             <FormControl isRequired>
               <FormLabel>Last name</FormLabel>
                 <Input
