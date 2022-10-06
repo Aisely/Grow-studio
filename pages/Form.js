@@ -41,34 +41,31 @@ const Form = ({ setForm, form, onGenerateId }) => {
           <VStack spacing={5}>
             <FormControl isRequired>
               <FormLabel>Email</FormLabel>
-              <InputGroup>
-                {/* <Input
+                <Input
                   value={form.email}
                   onChange={(event) =>
                     setForm({ ...form, email: event.target.value })
                   }
                   placeholder="Your Email"
-                /> */}
-                <input
+                />
+                {/* <input
                 value={form.email}
                 onChange={(event) =>
                   setForm({ ...form, email: event.target.value })
                 }
                 placeholder="Your Email"
-                />
-              </InputGroup>
+                /> */}
             </FormControl>
             <FormControl isRequired>
               <FormLabel>First name</FormLabel>
-              <InputGroup>
                 <Input
+                type="name"
                   value={form.firstname}
                   onChange={(event) =>
                     setForm({ ...form, firstname: event.target.value })
                   }
                   placeholder="Your first name"
                 />
-              </InputGroup>
             </FormControl>
             {/* <input
                 type="text"
@@ -79,8 +76,6 @@ const Form = ({ setForm, form, onGenerateId }) => {
                 }/> */}
             <FormControl isRequired>
               <FormLabel>Last name</FormLabel>
-              <InputGroup>
-                {/* <InputLeftElement children={<MdOutlineEmail />} /> */}
                 <Input
                   placeholder="Your last name"
                   value={form.lastname}
@@ -88,7 +83,6 @@ const Form = ({ setForm, form, onGenerateId }) => {
                     setForm({ ...form, lastname: event.target.value })
                   }
                 />
-              </InputGroup>
             </FormControl>
             <FormControl isRequired>
               <FormLabel>Program</FormLabel>
