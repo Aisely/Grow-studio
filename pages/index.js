@@ -1,10 +1,6 @@
 import { useState } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
 import Form from "./Form";
 import Card from "./Card";
-// import hasha from 'hasha'
 
 export default function Home() {
   const [learnerId, setLearnerId] = useState('')
@@ -15,13 +11,8 @@ export default function Home() {
     program: "",
     level: "",
   });
-  console.log(form);
-  console.log(form.firstname);
-  const id = form.firstname;
-  console.log(id.replace(/\s/g, "").slice(0, 2).toUpperCase(), "hello");
-  // console.log(hasha("paul simon"))
+  
   const onGenerateId = () => {
-    // const hash = hasha(form.firstname)
     let pr;
     switch (form.program) {
       case "Android Development":
@@ -68,7 +59,6 @@ export default function Home() {
   };
   return (
     <>
-    <div className="header"></div>
       <div className="wrap">
         <div className="form">
           <Form setForm={setForm} form={form} onGenerateId={onGenerateId} />

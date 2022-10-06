@@ -26,7 +26,7 @@ import { FaRegImages } from "react-icons/fa";
 
 
 const Form = ({ setForm, form, onGenerateId }) => {
-  const { hasCopied, onCopy } = useClipboard("example@example.com");
+  // const { hasCopied, onCopy } = useClipboard("example@example.com");
 
   return (
     <>
@@ -50,7 +50,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                   onChange={(event) =>
                     setForm({ ...form, email: event.target.value })
                   }
-                  placeholder="Your first name"
+                  placeholder="Your Email"
                 />
               </InputGroup>
             </FormControl>
@@ -76,7 +76,7 @@ const Form = ({ setForm, form, onGenerateId }) => {
                 <Input
                   type="text"
                   name="lastname"
-                  placeholder="You last name"
+                  placeholder="Your last name"
                   value={form.lastname}
                   onChange={(event) =>
                     setForm({ ...form, lastname: event.target.value })
