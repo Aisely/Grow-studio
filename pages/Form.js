@@ -42,20 +42,20 @@ const Form = ({ setForm, form, onGenerateId }) => {
             <FormControl isRequired>
               <FormLabel>Email</FormLabel>
               <InputGroup>
-                <Input
+                {/* <Input
                   value={form.email}
                   onChange={(event) =>
                     setForm({ ...form, email: event.target.value })
                   }
                   placeholder="Your Email"
-                />
-                {/* <input
+                /> */}
+                <input
                 value={form.email}
                 onChange={(event) =>
                   setForm({ ...form, email: event.target.value })
                 }
                 placeholder="Your Email"
-                /> */}
+                />
               </InputGroup>
             </FormControl>
             <FormControl isRequired>
