@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 // import { CheckIcon } from '@chakra-ui/icons';
 
-export default function Card({ learnerId, form }) {
+const Card = ({ learnerId, form }) => {
   return (
     <Center py={6}>
       <Box
@@ -97,3 +97,5 @@ export default function Card({ learnerId, form }) {
     </Center>
   );
 }
+
+export default Card;
