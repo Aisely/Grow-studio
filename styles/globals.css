@@ -32,8 +32,19 @@ a {
   justify-content: center;
   align-items: center;
   width: 50%;
-  min-height: 600px;
-  background-color: ;
+  /* min-height: 600px; */
+}
+
+@media (max-width: 700px) {
+  .wrap{
+    flex-direction: column;
+  }
+  .card{
+    width: 100%;
+  }
+  .form{
+    width:100%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
