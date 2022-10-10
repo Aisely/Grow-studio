@@ -1,3 +1,5 @@
+
+const GenerateId = ({}) => {
 const [learnerId, setLearnerId] = useState('')
 const [form, setForm] = useState({
   email: "",
@@ -6,8 +8,6 @@ const [form, setForm] = useState({
   program: "",
   level: "",
 });
-
-const GenerateId = ({}) => {
 
     const onGenerateId = () => {
       let pr;
