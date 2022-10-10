@@ -1,72 +1,56 @@
-import { useState } from "react";
-import Form from '../components/Form'
-import Card from "../components/Card";
-
 export default function Home() {
-  const [learnerId, setLearnerId] = useState('')
-  const [form, setForm] = useState({
-    email: "",
-    firstname: "",
-    lastname: "",
-    program: "",
-    level: "",
-  });
-  
-  const onGenerateId = () => {
-    let pr;
-    switch (form.program) {
-      case "Android Development":
-        pr = "AND";
-        break;
-      case "Frontend Development":
-        pr = "FRD";
-        break;
-      case "Backend Development":
-        pr = "BKD";
-        break;
-      case "Full-stack development":
-        pr = "FUD";
-        break;
-      case "DevOps Development":
-        pr = "DOP";
-        break;
-    }
-    let le;
-    switch (form.level) {
-      case "Entry":
-        le = "EN";
-        break;
-      case "Junior":
-        le = "JU";
-        break;
-      case "Intermediate":
-        le = "IN";
-        break;
-      case "Senior":
-        le = "SE";
-        break;
-    }
-
-    const id = `GR${form.firstname
-      .replace(/\s/g, "")
-      .slice(0, 2)
-      .toUpperCase()}${form.lastname
-      .replace(/\s/g, "")
-      .slice(0, 2)
-      .toUpperCase()}229${pr}${le}`;
-    console.log(id);
-    setLearnerId(id)
-  };
   return (
     <>
-      <div className="wrap">
-        <div className="form">
-          <Form setForm={setForm} form={form} onGenerateId={onGenerateId} />
+      <form action="" id="login">
+        <div className="max-w-[500px]">
+          <div className="mb-6">
+            {/* <h3 className="mb-2 text-2xl ">Login</h3> */}
+          </div>
+          <div className=" rounded-md border  border-[#436664] bg-[#3c5c5a] shadow">
+            <div>
+              <div className="grid grid-cols-12 gap-6 px-8 py-8  opacity-100  block undefined">
+                <label className="text-scale-1200 col-span-12 text-2xl lg:col-span-5 ">Login</label>
+                <div className="relative col-span-12 flex flex-col gap-6 lg:col-span-7">
+                  {" "}
+                  {/* wrapper for input boxes */}
+                  <div className="grid gap-3 text-sm leading-4 md:grid md:grid-cols-12 md:gap-x-4">
+                    <div className="col-span-12 flex flex-row justify-between space-x-2">
+                      <div>
+                        <label className="text-scale-1100 block break-all text-lg leading-4">
+                          First name
+                        </label>
+                        <p className="opacity-70 mt-1 text-xs">Fill in your full name you used to register</p>
+                      </div>
+                    </div>
+                    <div className="col-span-12">
+                      <input className="focus:border-  focus:ring-scale-400 border-scale-700 box-border block w-full rounded-md  border-2 border-[#436664] bg-[#3c5c5a] px-3 py-2 text-sm leading-4 shadow-sm  outline-none  transition-all focus:border-[#55817f] focus:shadow-md focus:ring-[#436664]" />
+                    </div>
+                  </div>
+                  <div className="grid gap-3 text-sm leading-4 md:grid md:grid-cols-12 md:gap-x-4">
+                    <div className="col-span-12 flex flex-row justify-between space-x-2">
+                      <div>
+                        <label className="text-scale-1100 block break-all text-lg leading-4">
+                          OTP code
+                        </label>
+                        <p className="opacity-70 mt-1 text-xs">Fill in the code that was given to you after manual registration</p>
+                      </div>
+                    </div>
+                    <div className="col-span-12">
+                      <input className="focus:border-  focus:ring-scale-400 border-scale-700 box-border block w-full rounded-md  border-2 border-[#436664] bg-[#3c5c5a] px-3 py-2 text-sm leading-4 shadow-sm  outline-none  transition-all focus:border-[#55817f] focus:shadow-md focus:ring-[#436664]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="border-[#436664]"></div>
+              <div className="flex py-4 px-8">
+                <div className="w-full flex justify-end">
+                    <button className="text-[14px] bg-[#66cee9] opacity-90 hover:bg-[#6fe1fd] hover:opacity-100 px-5 py-2 rounded"><span class="truncate">Login</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="card">
-          <Card form={form} learnerId={learnerId} />
-        </div>
-      </div>
+      </form>
     </>
   );
 }

@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --primary: #244645;
+  --secondary: #45899c; /* hover state */
+  --accent-red: #ff4f4f;
+  --accent-blue: #66cee9;
+
+}
+
 html,
 body {
+  background-color: #244645;
+  color: white;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
