@@ -267,15 +267,7 @@ const Landing = ({supabaseKey}) => {
     </div>
   );
 };
-
-export async function getStaticProps() {
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
-
-  return {
-    props: {
-      supabaseKey,
-    }
-  }
-}
-
 export default Landing;
+
+
+
