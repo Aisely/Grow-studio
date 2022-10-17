@@ -8,7 +8,7 @@ import { check } from "prettier";
 import Modal from "../Loading/Modal";
 
 
-const Landing = () => {
+const Landing = ({supabaseKey}) => {
   const router = useRouter();
   const [otp, setOtp] = useState("");
   const [fullname, setFullname] = useState("");
@@ -25,7 +25,6 @@ const Landing = () => {
   const [checkValidationIcon, setValidationIcon] = useState("");
 
   const supabaseUrl = "https://omggdzphlnhdxgvsfsbe.supabase.co";
-  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   const readSupabase = async () => {
@@ -268,5 +267,15 @@ const Landing = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+
+  return {
+    props: {
+      supabaseKey,
+    }
+  }
+}
 
 export default Landing;
