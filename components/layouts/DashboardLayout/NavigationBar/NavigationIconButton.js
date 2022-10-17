@@ -3,7 +3,6 @@ import Link from "next/link";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
 const NavigationIconButton = ({ route, isActive = false }) => {
-  console.log(route.link, isActive)
   return (
     <Tooltip.Root delayDuration={0}>
       <Tooltip.Trigger>

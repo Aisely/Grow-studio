@@ -1,4 +1,6 @@
 import React from 'react'
+import DashboardLayout from "../components/layouts/DashboardLayout/DashboardLayout";
+
 
 const Home = () => {
   return (
@@ -15,3 +17,5 @@ const Home = () => {
 }
 
 export default Home
+
+Home.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>

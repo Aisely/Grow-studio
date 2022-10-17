@@ -1,4 +1,6 @@
 import React from 'react'
+import DashboardLayout from "../components/layouts/DashboardLayout/DashboardLayout";
+
 
 const Settings = () => {
   return (
@@ -7,3 +9,5 @@ const Settings = () => {
 }
 
 export default Settings;
+
+Settings.getLayout = (page) => <DashboardLayout>{page}</DashboardLayout>

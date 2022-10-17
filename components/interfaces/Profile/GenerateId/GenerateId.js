@@ -51,7 +51,6 @@ const [form, setForm] = useState({
         .replace(/\s/g, "")
         .slice(0, 2)
         .toUpperCase()}229${pr}${le}`;
-      console.log(id);
       setLearnerId(id)
     };
     return (

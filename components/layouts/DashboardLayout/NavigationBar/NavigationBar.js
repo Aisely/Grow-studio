@@ -11,7 +11,7 @@ const NavigationBar = ({ children }) => {
     <div className="flex h-full bg-[#244645]">
       <div className=" flex h-screen w-14 flex-col justify-center overflow-y-hidden border-r border-white border-opacity-10 p-2">
         <div></div>
-        <div class="flex-col items-center justify-center space-y-4  ">
+        <div className="flex-col items-center justify-center space-y-4  ">
           {
             pageRoutes.map((route) => (
               <NavigationIconButton

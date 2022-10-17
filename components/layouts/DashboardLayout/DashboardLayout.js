@@ -1,17 +1,20 @@
 import LayoutHeader from "./LayoutHeader/LayoutHeader";
 import NavigationBar from "./NavigationBar/NavigationBar";
-
-const DashboardLayout = ({children}) => {
+import * as Tooltip from "@radix-ui/react-tooltip";
+import { Spinner } from '@chakra-ui/react'
+const DashboardLayout = ({ children }) => {
   return (
-    <div className="flex h-full bg-[#244645]">
-      <NavigationBar />
+ 
+      <div className="flex h-full bg-[#244645]">
+        <Tooltip.Provider>
+          <NavigationBar />
+        </Tooltip.Provider>
         <main className="w-full">
           <LayoutHeader />
           {children}
         </main>
-    </div>
+      </div>
   );
 };
-
 
 export default DashboardLayout;
