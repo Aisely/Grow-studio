@@ -6,7 +6,7 @@ const LayoutHeader = () => {
 
   return (
     <div className="flex h-12 w-full border-b border-white border-opacity-10 py-2">
-      <div class="flex">
+      <div className="flex">
         <div className="inline-flex items-center mx-4 opacity-70 text-xs"><span className="truncate">Grow</span></div>
         <span className="opacity-70 flex items-center">
         {/* <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision"><path d="M16 3.549L7.12 20.600"></path></svg> */}

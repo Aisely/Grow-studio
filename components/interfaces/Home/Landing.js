@@ -7,8 +7,7 @@ import { useRouter } from "next/router";
 import { check } from "prettier";
 import Modal from "../Loading/Modal";
 
-
-const Landing = ({supabaseKey}) => {
+const Landing = ({ supabaseKey }) => {
   const router = useRouter();
   const [otp, setOtp] = useState("");
   const [fullname, setFullname] = useState("");
@@ -63,27 +62,16 @@ const Landing = ({supabaseKey}) => {
     }
   };
 
-  const FullnameValidationIcon = () => {
-    return checkFullname ? (
-      <BiCheckCircle size={21} color="#16e585" />
-    ) : (
-      <BiErrorCircle size={21} color="#e53d3d" />
-    );
-  };
-  const OtpValidationIcon = () => {
-    return checkOtp ? (
-      <BiCheckCircle size={21} color="#16e585" />
-    ) : (
-      <BiErrorCircle size={21} color="#e53d3d" />
-    );
-  };
-
   useEffect(() => {
+    console.log("readsupabase ran")
     readSupabase();
   }, [fullnamespinner, otpspinner]);
 
   const onAuthenticate = (e) => {
     e.preventDefault();
+    console.log('work')
+    return router.push("/home")
+
     console.log("reach oo", students);
     setLoading(true);
     if (checkFullname && checkOtp) {
@@ -94,11 +82,10 @@ const Landing = ({supabaseKey}) => {
       console.log(result);
       if (result !== undefined) {
         if (result.fullname === fullname) {
-          setModal(true)
+          setModal(true);
           setTimeout(() => {
-
             router.push("/home");
-          }, 2000)
+          }, 2000);
           // console.log("IT MATCHED");
           // alert("NOW you are logged In");
         } else {
@@ -126,85 +113,54 @@ const Landing = ({supabaseKey}) => {
 
     //redirect to dashboard
   };
+  
+  const FullnameValidationIcon = () => {
+    return checkFullname ? (
+      <BiCheckCircle size={21} color="#16e585" />
+    ) : (
+      <BiErrorCircle size={21} color="#e53d3d" />
+    );
+  };
+  const OtpValidationIcon = () => {
+    return checkOtp ? (
+      <BiCheckCircle size={21} color="#16e585" />
+    ) : (
+      <BiErrorCircle size={21} color="#e53d3d" />
+    );
+  };
 
   return (
     <div className="flex h-[800px] w-full items-center justify-center">
-      { !modal ?<form action="" id="login" onSubmit={onAuthenticate}>
-        <div className="max-w-[700px]">
-          <div className="mb-6">
-            {/* <h3 className="mb-2 text-2xl ">Login</h3> */}
-          </div>
+      {!modal ? (
+        <form action="" id="login" onSubmit={onAuthenticate}>
+          <div className="max-w-[700px]">
+            <div className="mb-6">
+              {/* <h3 className="mb-2 text-2xl ">Login</h3> */}
+            </div>
 
-          <div className=" rounded-md border  border-[#436664] bg-[#3c5c5a] shadow">
-            <div>
-              <div className="undefined block grid grid-cols-12 gap-6  px-8  py-8 opacity-100">
-                <label className="text-scale-1200 col-span-12 text-2xl lg:col-span-5 ">
-                  Login
-                </label>
-                <div className="relative col-span-12 flex flex-col gap-7 lg:col-span-7">
-                  {" "}
-                  {/* wrapper for input boxes */}
-                  <div className="grid gap-3 text-sm leading-4 md:grid md:grid-cols-12 md:gap-x-4">
-                    <div className="col-span-12 flex flex-row justify-between space-x-2">
-                      <div>
-                        <label className="text-scale-1100 block break-all text-lg leading-4">
-                          Full name
-                        </label>
-                        <p className="mt-1 text-xs opacity-70">
-                          Fill in your full name you used to register
-                        </p>
+            <div className=" rounded-md border  border-[#436664] bg-[#3c5c5a] shadow">
+              <div>
+                <div className="undefined block grid grid-cols-12 gap-6  px-8  py-8 opacity-100">
+                  <label className="text-scale-1200 col-span-12 text-2xl lg:col-span-5 ">
+                    Login
+                  </label>
+                  <div className="relative col-span-12 flex flex-col gap-7 lg:col-span-7">
+                    {" "}
+                    {/* wrapper for input boxes */}
+                    <div className="grid gap-3 text-sm leading-4 md:grid md:grid-cols-12 md:gap-x-4">
+                      <div className="col-span-12 flex flex-row justify-between space-x-2">
+                        <div>
+                          <label className="text-scale-1100 block break-all text-lg leading-4">
+                            Full name
+                          </label>
+                          <p className="mt-1 text-xs opacity-70">
+                            Fill in your full name you used to register
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="relative col-span-12 ">
-                      <span className="absolute right-0 mr-2 flex h-full items-center">
-                        {fullnamespinner ? (
-                          <Loading
-                            color="#16e585"
-                            strokeWidth={4}
-                            strokeWidthSecondary={4}
-                            height={18}
-                            width={18}
-                          />
-                        ) : fullname !== "" ? (
-                          <FullnameValidationIcon />
-                        ) : null}
-                      </span>
-                      <input
-                        value={fullname}
-                        onChange={(event) => {
-                          setFullnameSpinner(true);
-                          setFullnameErrorAlert(false);
-                          setNotMatch(false);
-                          setFullname(event.target.value);
-                        }}
-                        disabled={loading}
-                        className={
-                          "focus:border-  focus:ring-scale-400 border-scale-700 box-border block w-full rounded-md  border-2  border-[#436664] bg-[#3c5c5a] px-3 py-2 text-sm leading-4 shadow-sm  outline-none  transition-all focus:border-[#55817f] focus:shadow-md focus:ring-[#436664]"
-                        }
-                      />
-                      {fullnameErrorAlert ? (
-                        <p className="text-xs absolute mt-1 text-[#e53d3d]">
-                          Fullname is incorrect
-                        </p>
-                      ) : null}
-                    </div>
-                  </div>
-                  <div className="grid gap-3 text-sm leading-4 md:grid md:grid-cols-12 md:gap-x-4">
-                    <div className="col-span-12 flex flex-row justify-between space-x-2">
-                      <div>
-                        <label className="text-scale-1100 block break-all text-lg leading-4">
-                          OTP code
-                        </label>
-                        <p className="mt-1 text-xs opacity-70">
-                          Fill in the code that was given to you after manual
-                          registration
-                        </p>
-                      </div>
-                    </div>
-                    <div className="relative col-span-12">
-                      <span className="absolute right-0 mr-2 flex h-full items-center">
-                        {otp !== "" ? (
-                          otpspinner ? (
+                      <div className="relative col-span-12 ">
+                        <span className="absolute right-0 mr-2 flex h-full items-center">
+                          {fullnamespinner ? (
                             <Loading
                               color="#16e585"
                               strokeWidth={4}
@@ -212,62 +168,107 @@ const Landing = ({supabaseKey}) => {
                               height={18}
                               width={18}
                             />
-                          ) : otp !== "" ? (
-                            <OtpValidationIcon />
-                          ) : null
+                          ) : fullname !== "" ? (
+                            <FullnameValidationIcon />
+                          ) : null}
+                        </span>
+                        <input
+                          value={fullname}
+                          onChange={(event) => {
+                            setFullnameSpinner(true);
+                            setFullnameErrorAlert(false);
+                            setNotMatch(false);
+                            setFullname(event.target.value);
+                          }}
+                          disabled={loading}
+                          className={
+                            "focus:border-  focus:ring-scale-400 border-scale-700 box-border block w-full rounded-md  border-2  border-[#436664] bg-[#3c5c5a] px-3 py-2 text-sm leading-4 shadow-sm  outline-none  transition-all focus:border-[#55817f] focus:shadow-md focus:ring-[#436664]"
+                          }
+                        />
+                        {fullnameErrorAlert ? (
+                          <p className="absolute mt-1 text-xs text-[#e53d3d]">
+                            Fullname is incorrect
+                          </p>
                         ) : null}
-                      </span>
-                      <input
-                        value={otp}
-                        onChange={(event) => {
-                          setOtpSpinner(true);
-                          setOtpErrorAlert(false);
-                          setNotMatch(false);
-                          setOtp(event.target.value);
-                        }}
-                        disabled={loading}
-                        className="focus:border-  focus:ring-scale-400 border-scale-700 box-border block w-full rounded-md  border-2 border-[#436664] bg-[#3c5c5a] px-3 py-2 text-sm leading-4 shadow-sm  outline-none  transition-all focus:border-[#55817f] focus:shadow-md focus:ring-[#436664]"
-                      />
-                      {otpErrorAlert ? (
-                        <p className="text-xs absolute mt-1 text-[#e53d3d]">
-                          Otp is incorrect
+                      </div>
+                    </div>
+                    <div className="grid gap-3 text-sm leading-4 md:grid md:grid-cols-12 md:gap-x-4">
+                      <div className="col-span-12 flex flex-row justify-between space-x-2">
+                        <div>
+                          <label className="text-scale-1100 block break-all text-lg leading-4">
+                            OTP code
+                          </label>
+                          <p className="mt-1 text-xs opacity-70">
+                            Fill in the code that was given to you after manual
+                            registration
+                          </p>
+                        </div>
+                      </div>
+                      <div className="relative col-span-12">
+                        <span className="absolute right-0 mr-2 flex h-full items-center">
+                          {otp !== "" ? (
+                            otpspinner ? (
+                              <Loading
+                                color="#16e585"
+                                strokeWidth={4}
+                                strokeWidthSecondary={4}
+                                height={18}
+                                width={18}
+                              />
+                            ) : otp !== "" ? (
+                              <OtpValidationIcon />
+                            ) : null
+                          ) : null}
+                        </span>
+                        <input
+                          value={otp}
+                          onChange={(event) => {
+                            setOtpSpinner(true);
+                            setOtpErrorAlert(false);
+                            setNotMatch(false);
+                            setOtp(event.target.value);
+                          }}
+                          disabled={loading}
+                          className="focus:border-  focus:ring-scale-400 border-scale-700 box-border block w-full rounded-md  border-2 border-[#436664] bg-[#3c5c5a] px-3 py-2 text-sm leading-4 shadow-sm  outline-none  transition-all focus:border-[#55817f] focus:shadow-md focus:ring-[#436664]"
+                        />
+                        {otpErrorAlert ? (
+                          <p className="absolute mt-1 text-xs text-[#e53d3d]">
+                            Otp is incorrect
+                          </p>
+                        ) : null}
+                      </div>
+                    </div>
+                    {notMatch ? (
+                      <div className="flex items-center">
+                        <BiErrorCircle size={21} color="#e53d3d" />
+                        <p className="ml-1 truncate text-xs text-[#e53d3d]">
+                          The Full name and OTP code do not match.
                         </p>
-                      ) : null}
-                    </div>
+                      </div>
+                    ) : null}
                   </div>
-                  {notMatch ? (
-                    <div className="flex items-center">
-                      <BiErrorCircle size={21} color="#e53d3d" />
-                      <p className="ml-1 truncate text-xs text-[#e53d3d]">
-                        The Full name and OTP code do not match.
-                      </p>
-                    </div>
-                  ) : null}
                 </div>
-              </div>
 
-              <div className="border-[#436664]"></div>
+                <div className="border-[#436664]"></div>
 
-              <div className="flex py-4 px-8">
-                <div className="flex w-full justify-end">
-                  {/* {loading ? ( */}
-                  <button className="rounded bg-[#66cee9] px-5 py-2 text-[14px] opacity-90 hover:bg-[#6fe1fd] hover:opacity-100">
-                    <span className="truncate">Login</span>
-                  </button>
-                  {/*  ) : (
+                <div className="flex py-4 px-8">
+                  <div className="flex w-full justify-end">
+                    {/* {loading ? ( */}
+                    <button className="rounded bg-[#66cee9] px-5 py-2 text-[14px] opacity-90 hover:bg-[#6fe1fd] hover:opacity-100">
+                      <span className="truncate">Login</span>
+                    </button>
+                    {/*  ) : (
                      <Loading />
                    )} */}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </form> : null}
-      {modal ? <Modal fullname={fullname}/> : null}
+        </form>
+      ) : null}
+      {modal ? <Modal fullname={fullname} /> : null}
     </div>
   );
 };
 export default Landing;
-
-
-

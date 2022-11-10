@@ -5,7 +5,7 @@ import { Spinner } from '@chakra-ui/react'
 const DashboardLayout = ({ children }) => {
   return (
  
-      <div className="flex h-full bg-[#244645]">
+      <div className="flex h-full bg-[#244645] overflow-y-hidden">
         <Tooltip.Provider>
           <NavigationBar />
         </Tooltip.Provider>
